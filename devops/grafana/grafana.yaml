@@ -1,13 +1,15 @@
-grafana:
-  image: grafana/grafana:latest
-  restart: always
-  container_name: grafana
-  hostname: grafana
-  environment:
-  - TZ=Asia/Shanghai
-  volumes:
-  # - ./config/defaults.ini:/etc/grafana/grafana.ini
-  - ./data:/var/lib/grafana
-  ports:
-  - 3000:3000
+version: "3"
 
+services:
+  grafana:
+    image: grafana/grafana:latest
+    restart: always
+    container_name: grafana
+    hostname: grafana
+    environment:
+    - TZ=Asia/Shanghai
+    volumes:
+    # - ./config/defaults.ini:/etc/grafana/grafana.ini
+    - ./data:/var/lib/grafana
+    ports:
+    - 13000:3000

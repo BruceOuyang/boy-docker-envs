@@ -1,11 +1,14 @@
-node_exporter:
-  image: prom/node-exporter:latest
-  container_name: node_exporter
-  command:
-    - '--path.rootfs=/host'
-  pid: host
-  restart: unless-stopped
-  environment:
- - TZ=Asia/Shanghai
-  ports:
-    - 9100:9100
+version: "3"
+
+services:
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    pid: host
+    restart: unless-stopped
+    environment:
+   - TZ=Asia/Shanghai
+    ports:
+      - 19100:9100
