@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: boy-mysql
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./conf:/etc/mysql/conf.d
+      - ./logs:/logs
+      - /etc/localtime:/etc/localtime
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      EXTRA_OPTS: lower_case_table_names=1
+    restart: always
